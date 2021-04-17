@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="inline">
+    <title>JavaScript</title>
+    <script>
+        function checkFormData() {
+            var message = "";
+
+            // Access The Text Boc Contents.
+            var tname = document.getElementById('txt_Name').value;
+            var temail = document.getElementById('txt_Email').value;
+            var tage = document.getElementById('txt_Age').value;
+
+            // Access The Readio Button Values.
+            var tgender1 = document.getElementById('radio1').checked;
+            var tgender2 = document.getElementById('radio2').checked;
+
+            // Access Checkbox.
+            var tcheckbox = document.getElementById('chkbox').checked;
+
+            message+= "Name: " + tname + "<br>";
+            message+= "Email: " + temail + "<br>";
+            message+= "Age: " + tage + "<br>";
+            message+= "Male: " + tgender1 + "<br>";
+            message+= "Female: " + tgender2 + "<br>";
+            message+= "Agreed: " + tcheckbox + "<br>";
+
+            document.getElementById('tmessage').innerHTML = message;
+        }
+    </script>
+
+</head> 
+<body>
+    <h2>Funtion</h2>
+    <p id="tmessage"></p>
+    <form name="user" id="userfrm" action="#">
+        Your Name: <input type="text" name="tname" id="txt_Name"/><br>
+        Your Email: <input type="text" name="temail" id="txt_Email"/><br>
+        Your Age: <input type="text" name="tage" id="txt_Age"/><br>
+        Male: <input type="radio" name="gender" id="radio1" checked/><br>
+        Female: <input type="radio" name="gender" id="radio2"/><br>
+        <input type="checkbox" name="" id="chkbox"/> Agree to our Terms of Use<br>
+
+        <input type="button" name="submit" value="Submit" onclick="checkFormData();"/><br>
+    </form>
+</body>
+</html>
